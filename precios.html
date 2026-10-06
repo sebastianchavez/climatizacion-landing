@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Precios · ClimatPro</title>
+  <meta name="description" content="Planes y precios de ClimatPro: residencial, comercial e industrial. Presupuesto sin cargo y financiación." />
+  <meta name="theme-color" content="#1e3a8a" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { brand: { 50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a',950:'#172554' }, accent: { 300:'#67e8f9',400:'#22d3ee',500:'#06b6d4',600:'#0891b2',700:'#0e7490' } },
+        fontFamily: { sans:['Inter','system-ui','sans-serif'], display:['Poppins','sans-serif'] }
+      } }
+    }
+  </script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img src="assets/img/logo.svg" alt="ClimatPro" class="w-11 h-11 group-hover:scale-105 transition-transform"/>
+          <div>
+            <span class="block font-display font-extrabold text-xl leading-none text-brand-900">ClimatPro</span>
+            <span class="block text-[11px] uppercase tracking-widest text-accent-600">HVAC Solutions</span>
+          </div>
+        </a>
+        <ul class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-700">
+          <li><a href="index.html" data-nav-link class="nav-link">Inicio</a></li>
+          <li><a href="nosotros.html" data-nav-link class="nav-link">Nosotros</a></li>
+          <li><a href="servicios.html" data-nav-link class="nav-link">Servicios</a></li>
+          <li><a href="precios.html" data-nav-link class="nav-link active">Precios</a></li>
+          <li><a href="galeria.html" data-nav-link class="nav-link">Galería</a></li>
+          <li><a href="clases.html" data-nav-link class="nav-link">Clases</a></li>
+          <li><a href="contacto.html" data-nav-link class="nav-link">Contacto</a></li>
+        </ul>
+        <div class="hidden lg:block">
+          <a href="contacto.html" class="btn-gradient px-5 py-2.5 rounded-full text-white text-sm font-semibold inline-flex items-center gap-2">
+            Solicitar presupuesto
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+        </div>
+        <button id="menu-btn" type="button" aria-expanded="false" aria-label="Abrir menú" class="lg:hidden flex flex-col gap-1.5 w-10 h-10 justify-center items-center text-brand-900">
+          <span class="hamburger-line hamburger-top block w-6 h-0.5 bg-current"></span>
+          <span class="hamburger-line hamburger-middle block w-6 h-0.5 bg-current"></span>
+          <span class="hamburger-line hamburger-bottom block w-6 h-0.5 bg-current"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="mobile-overlay" class="hidden fixed inset-0 bg-slate-900/40 z-40 lg:hidden"></div>
+  <div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 max-w-[85%] bg-brand-950 z-50 transform translate-x-full transition-transform duration-300 lg:hidden">
+    <div class="p-6 flex flex-col h-full">
+      <div class="flex items-center justify-between mb-10">
+        <div class="flex items-center gap-3">
+          <img src="assets/img/logo.svg" class="w-10 h-10" alt="ClimatPro">
+          <span class="font-display font-bold text-white text-lg">ClimatPro</span>
+        </div>
+        <button onclick="document.getElementById('menu-btn').click()" class="text-white p-2" aria-label="Cerrar menú">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <ul class="flex flex-col gap-1 text-white">
+        <li><a href="index.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Inicio</a></li>
+        <li><a href="nosotros.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Nosotros</a></li>
+        <li><a href="servicios.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Servicios</a></li>
+        <li><a href="precios.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Precios</a></li>
+        <li><a href="galeria.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Galería</a></li>
+        <li><a href="clases.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Clases</a></li>
+        <li><a href="contacto.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Contacto</a></li>
+      </ul>
+      <a href="contacto.html" class="mt-auto btn-gradient px-5 py-3 rounded-full text-white font-semibold text-center">Solicitar presupuesto</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative pt-40 pb-20 overflow-hidden bg-gradient-to-br from-brand-50 to-cyan-50">
+    <div class="absolute inset-0 bg-radial-brand opacity-70"></div>
+    <div class="relative max-w-4xl mx-auto px-5 lg:px-8 text-center" data-aos="fade-up">
+      <span class="inline-block text-accent-600 text-xs font-bold uppercase tracking-widest mb-4">Planes & tarifas</span>
+      <h1 class="font-display text-4xl md:text-6xl font-extrabold text-brand-950 mb-6">Precios <span class="text-gradient">transparentes</span></h1>
+      <p class="text-slate-600 text-lg max-w-2xl mx-auto">Elegí el plan que mejor se ajuste a tu hogar, comercio o industria. Todos nuestros presupuestos son sin cargo y la financiación hasta 12 cuotas sin interés.</p>
+    </div>
+  </section>
+
+  <!-- 3 PLANES -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="grid lg:grid-cols-3 gap-8">
+
+        <!-- RESIDENCIAL -->
+        <article class="bg-white rounded-3xl shadow-xl p-8 card-hover border border-slate-100" data-aos="fade-up" data-aos-delay="100">
+          <div class="mb-6">
+            <span class="text-sm font-bold text-brand-700 uppercase tracking-wider">Residencial</span>
+            <h3 class="font-display text-2xl font-extrabold text-brand-900 mt-1">Plan Hogar</h3>
+          </div>
+          <div class="mb-6">
+            <span class="text-5xl font-display font-extrabold text-brand-900">$45K</span>
+            <span class="text-slate-500">/visita</span>
+          </div>
+          <p class="text-sm text-slate-500 mb-6">Ideal para casas y departamentos. Mantenimiento integral de hasta 2 equipos.</p>
+          <ul class="space-y-3 mb-8 text-sm">
+            <li class="flex gap-3"><svg class="w-5 h-5 text-accent-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Limpieza profunda (hasta 2 splits)</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-accent-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Control eléctrico y de gas</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-accent-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Visita de urgencias bonificada</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-accent-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Reporte digital del estado</li>
+            <li class="flex gap-3 opacity-50"><svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Auditoría energética</span></li>
+            <li class="flex gap-3 opacity-50"><svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg><span>Monitoreo remoto 24/7</span></li>
+          </ul>
+          <a href="contacto.html" class="block w-full text-center border-2 border-brand-700 text-brand-700 hover:bg-brand-700 hover:text-white font-semibold py-3 rounded-xl transition">Contratar</a>
+        </article>
+
+        <!-- COMERCIAL (destacado) -->
+        <article class="bg-gradient-to-br from-brand-900 to-brand-700 text-white rounded-3xl shadow-2xl p-8 card-hover relative lg:scale-105 lg:my-[-12px]" data-aos="fade-up" data-aos-delay="200">
+          <div class="badge-popular absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-1 rounded-full text-white text-xs font-bold uppercase tracking-wider">Más elegido</div>
+          <div class="mb-6">
+            <span class="text-sm font-bold text-accent-400 uppercase tracking-wider">Comercial</span>
+            <h3 class="font-display text-2xl font-extrabold mt-1">Plan Empresa</h3>
+          </div>
+          <div class="mb-6">
+            <span class="text-5xl font-display font-extrabold text-accent-400">$120K</span>
+            <span class="text-cyan-100">/mes</span>
+          </div>
+          <p class="text-sm text-cyan-100 mb-6">Pensado para oficinas, locales comerciales y restaurantes con flota mensual programada.</p>
+          <ul class="space-y-3 mb-8 text-sm">
+            <li class="flex gap-3"><svg class="w-5 h-5 text-accent-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Hasta 10 equipos incluidos</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-accent-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Visitas programadas mensuales</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-accent-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Urgencias 24/7 sin recargo</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-accent-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Reportes ejecutivos</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-accent-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Auditoría energética anual</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-accent-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Asesor técnico dedicado</li>
+          </ul>
+          <a href="contacto.html" class="block w-full text-center btn-gradient py-3 rounded-xl hover:shadow-lg">Contratar</a>
+        </article>
+
+        <!-- INDUSTRIAL -->
+        <article class="bg-white rounded-3xl shadow-xl p-8 card-hover border border-slate-100" data-aos="fade-up" data-aos-delay="300">
+          <div class="mb-6">
+            <span class="text-sm font-bold text-brand-700 uppercase tracking-wider">Industrial</span>
+            <h3 class="font-display text-2xl font-extrabold text-brand-900 mt-1">Plan Planta</h3>
+          </div>
+          <div class="mb-6">
+            <span class="text-5xl font-display font-extrabold text-brand-900">Custom</span>
+          </div>
+          <p class="text-sm text-slate-500 mb-6">Solución a medida para fábricas, data centers y grandes superficies. Incluye ingeniería propia.</p>
+          <ul class="space-y-3 mb-8 text-sm">
+            <li class="flex gap-3"><svg class="w-5 h-5 text-accent-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Equipos ilimitados</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-accent-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Visitas programadas semanales</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-accent-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Urgencias 24/7 prioritarias</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-accent-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Monitoreo remoto 24/7</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-accent-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Ingeniería y proyectos llave en mano</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 text-accent-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>SLA con respuesta en &lt;2 h</li>
+          </ul>
+          <a href="contacto.html" class="block w-full text-center border-2 border-brand-700 text-brand-700 hover:bg-brand-700 hover:text-white font-semibold py-3 rounded-xl transition">Cotizar a medida</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LISTA DE SERVICIOS INDIVIDUALES -->
+  <section class="py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-5 lg:px-8">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <span class="text-accent-600 text-xs font-bold uppercase tracking-widest">Servicios individuales</span>
+        <h2 class="font-display text-3xl md:text-4xl font-extrabold text-brand-950 mt-3 mb-4">También podés contratar por servicio</h2>
+        <p class="text-slate-600">Si necesitás algo puntual, tenemos tarifas individuales claras y competitivas.</p>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl shadow-xl" data-aos="fade-up">
+        <table class="w-full bg-white">
+          <thead class="bg-gradient-to-r from-brand-900 to-brand-700 text-white">
+            <tr>
+              <th class="text-left px-6 py-4 font-display font-bold">Descripción</th>
+              <th class="text-right px-6 py-4 font-display font-bold hidden md:table-cell">Tiempo</th>
+              <th class="text-right px-6 py-4 font-display font-bold">Desde</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr class="hover:bg-slate-50 transition">
+              <td class="px-6 py-4"><div class="font-semibold text-brand-900">Instalación de split (básico)</div><div class="text-xs text-slate-500">Hasta 3 metros de cañería, sin trabajo de albañilería</div></td>
+              <td class="px-6 py-4 text-right text-slate-500 text-sm hidden md:table-cell">3-4 h</td>
+              <td class="px-6 py-4 text-right"><span class="font-bold text-brand-900">$65.000</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition">
+              <td class="px-6 py-4"><div class="font-semibold text-brand-900">Mantenimiento split (por unidad)</div><div class="text-xs text-slate-500">Limpieza profunda + control eléctrico y de gas</div></td>
+              <td class="px-6 py-4 text-right text-slate-500 text-sm hidden md:table-cell">45 min</td>
+              <td class="px-6 py-4 text-right"><span class="font-bold text-brand-900">$22.000</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition">
+              <td class="px-6 py-4"><div class="font-semibold text-brand-900">Carga de gas refrigerante</div><div class="text-xs text-slate-500">Incluye detección de pérdidas</div></td>
+              <td class="px-6 py-4 text-right text-slate-500 text-sm hidden md:table-cell">1 h</td>
+              <td class="px-6 py-4 text-right"><span class="font-bold text-brand-900">$38.000</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition">
+              <td class="px-6 py-4"><div class="font-semibold text-brand-900">Reparación de urgencias</div><div class="text-xs text-slate-500">Diagnóstico + reparación en el día</div></td>
+              <td class="px-6 py-4 text-right text-slate-500 text-sm hidden md:table-cell">2-3 h</td>
+              <td class="px-6 py-4 text-right"><span class="font-bold text-brand-900">$45.000</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition">
+              <td class="px-6 py-4"><div class="font-semibold text-brand-900">Visita técnica + diagnóstico</div><div class="text-xs text-slate-500">Presupuesto escrito sin cargo</div></td>
+              <td class="px-6 py-4 text-right text-slate-500 text-sm hidden md:table-cell">1 h</td>
+              <td class="px-6 py-4 text-right"><span class="font-bold text-accent-600">Sin cargo</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition">
+              <td class="px-6 py-4"><div class="font-semibold text-brand-900">Sanitización de ductos</div><div class="text-xs text-slate-500">Incluye inspección y certificación</div></td>
+              <td class="px-6 py-4 text-right text-slate-500 text-sm hidden md:table-cell">4-6 h</td>
+              <td class="px-6 py-4 text-right"><span class="font-bold text-brand-900">$95.000</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition">
+              <td class="px-6 py-4"><div class="font-semibold text-brand-900">Auditoría energética</div><div class="text-xs text-slate-500">Informe técnico con recomendaciones</div></td>
+              <td class="px-6 py-4 text-right text-slate-500 text-sm hidden md:table-cell">Visita + 5 días</td>
+              <td class="px-6 py-4 text-right"><span class="font-bold text-brand-900">$80.000</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-slate-500 mt-4 text-center">* Precios de referencia en pesos argentinos, no incluyen materiales ni repuestos. IVA incluido.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <span class="text-accent-600 text-xs font-bold uppercase tracking-widest">Preguntas frecuentes</span>
+        <h2 class="font-display text-3xl md:text-4xl font-extrabold text-brand-950 mt-3">Resolvemos tus dudas</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="bg-white rounded-2xl shadow-sm p-6 group" data-aos="fade-up">
+          <summary class="cursor-pointer flex items-center justify-between font-semibold text-brand-900 list-none">
+            ¿Cuáles son las formas de pago aceptadas?
+            <svg class="w-5 h-5 text-brand-700 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-4 text-slate-600 text-sm">Efectivo, transferencia bancaria, todas las tarjetas de débito y crédito. Financiación hasta 12 cuotas sin interés con tarjetas bancarias seleccionadas. También trabajamos con Monero.</p>
+        </details>
+        <details class="bg-white rounded-2xl shadow-sm p-6 group" data-aos="fade-up">
+          <summary class="cursor-pointer flex items-center justify-between font-semibold text-brand-900 list-none">
+            ¿El presupuesto tiene costo?
+            <svg class="w-5 h-5 text-brand-700 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-4 text-slate-600 text-sm">No. Todos nuestros presupuestos y visitas técnicas son sin cargo. Te enviamos una cotización formal por escrito en menos de 48 h.</p>
+        </details>
+        <details class="bg-white rounded-2xl shadow-sm p-6 group" data-aos="fade-up">
+          <summary class="cursor-pointer flex items-center justify-between font-semibold text-brand-900 list-none">
+            ¿Trabajan con todas las marcas de confianza?
+            <svg class="w-5 h-5 text-brand-700 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-4 text-slate-600 text-sm">Sí. Somos service oficial de las principales marcas (Carrier, Daikin, LG, Samsung, Trane, Mitsubishi) y tenemos experiencia en todas las del mercado.</p>
+        </details>
+        <details class="bg-white rounded-2xl shadow-sm p-6 group" data-aos="fade-up">
+          <summary class="cursor-pointer flex items-center justify-between font-semibold text-brand-900 list-none">
+            ¿Qué garantía tienen los trabajos?
+            <svg class="w-5 h-5 text-brand-700 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-4 text-slate-600 text-sm">Las instalaciones tienen 12 meses de garantía escrita. Los mantenimientos cuentan con garantía de 90 días sobre las tareas realizadas. Los repuestos originales mantienen la garantía del fabricante.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 text-white text-center">
+    <div class="max-w-3xl mx-auto px-5 lg:px-8" data-aos="zoom-in">
+      <h2 class="font-display text-3xl md:text-4xl font-extrabold mb-5">¿Listo para empezar?</h2>
+      <p class="text-cyan-100 mb-8 text-lg">Solicitá tu presupuesto sin cargo. Te respondemos en menos de 24 h.</p>
+      <a href="contacto.html" class="btn-gradient px-8 py-4 rounded-full text-white font-semibold inline-flex items-center gap-2">
+        Solicitar presupuesto
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-950 text-cyan-100">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <img src="assets/img/logo.svg" alt="" class="w-11 h-11">
+            <div>
+              <span class="block font-display font-extrabold text-xl text-white">ClimatPro</span>
+              <span class="block text-[11px] uppercase tracking-widest text-accent-400">HVAC Solutions</span>
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed">Confort y eficiencia todo el año.</p>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-white mb-5">Empresa</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="nosotros.html" class="hover:text-accent-400 transition">Nosotros</a></li>
+            <li><a href="servicios.html" class="hover:text-accent-400 transition">Servicios</a></li>
+            <li><a href="precios.html" class="hover:text-accent-400 transition">Precios</a></li>
+            <li><a href="galeria.html" class="hover:text-accent-400 transition">Galería</a></li>
+            <li><a href="clases.html" class="hover:text-accent-400 transition">Academia</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-white mb-5">Soporte</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="contacto.html" class="hover:text-accent-400 transition">Contacto</a></li>
+            <li><a href="privacidad.html" class="hover:text-accent-400 transition">Política de privacidad</a></li>
+            <li><a href="terminos.html" class="hover:text-accent-400 transition">Términos y condiciones</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-white mb-5">Contacto</h4>
+          <ul class="space-y-3 text-sm">
+            <li>+54 11 4567-8900</li>
+            <li>contacto@climatpro.com</li>
+            <li>Lun-Vie 9-19h · Urgencias 24/7</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-12 pt-8 text-xs text-cyan-200/70 text-center">
+        <p>&copy; <span id="current-year">2024</span> ClimatPro · Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/541145678900" target="_blank" rel="noopener" aria-label="WhatsApp" class="whatsapp-float fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-2xl transition">
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.480 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.85c1.564.916 3.367 1.405 5.183 1.408 5.46 0 9.92-4.42 9.92-9.881.001-2.652-1.032-5.144-2.906-7.014-1.875-1.874-4.366-2.906-7.015-2.906-5.46 0-9.92 4.42-9.918 9.88-.001 2.075.567 4.083 1.621 5.833l-1.069 3.903 3.974-1.228zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/navbar.js"></script>
+</body>
+</html>

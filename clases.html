@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academia · ClimatPro</title>
+  <meta name="description" content="Talleres y capacitaciones de climatización. Aprendé con los mejores profesionales. Cursos básicos, intermedios y avanzados." />
+  <meta name="theme-color" content="#1e3a8a" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { brand: { 50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a',950:'#172554' }, accent: { 300:'#67e8f9',400:'#22d3ee',500:'#06b6d4',600:'#0891b2',700:'#0e7490' } },
+        fontFamily: { sans:['Inter','system-ui','sans-serif'], display:['Poppins','sans-serif'] }
+      } }
+    }
+  </script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img src="assets/img/logo.svg" alt="ClimatPro" class="w-11 h-11 group-hover:scale-105 transition-transform"/>
+          <div>
+            <span class="block font-display font-extrabold text-xl leading-none text-brand-900">ClimatPro</span>
+            <span class="block text-[11px] uppercase tracking-widest text-accent-600">HVAC Solutions</span>
+          </div>
+        </a>
+        <ul class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-700">
+          <li><a href="index.html" data-nav-link class="nav-link">Inicio</a></li>
+          <li><a href="nosotros.html" data-nav-link class="nav-link">Nosotros</a></li>
+          <li><a href="servicios.html" data-nav-link class="nav-link">Servicios</a></li>
+          <li><a href="precios.html" data-nav-link class="nav-link">Precios</a></li>
+          <li><a href="galeria.html" data-nav-link class="nav-link">Galería</a></li>
+          <li><a href="clases.html" data-nav-link class="nav-link active">Clases</a></li>
+          <li><a href="contacto.html" data-nav-link class="nav-link">Contacto</a></li>
+        </ul>
+        <div class="hidden lg:block">
+          <a href="contacto.html" class="btn-gradient px-5 py-2.5 rounded-full text-white text-sm font-semibold inline-flex items-center gap-2">
+            Solicitar presupuesto
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+        </div>
+        <button id="menu-btn" type="button" aria-expanded="false" aria-label="Abrir menú" class="lg:hidden flex flex-col gap-1.5 w-10 h-10 justify-center items-center text-brand-900">
+          <span class="hamburger-line hamburger-top block w-6 h-0.5 bg-current"></span>
+          <span class="hamburger-line hamburger-middle block w-6 h-0.5 bg-current"></span>
+          <span class="hamburger-line hamburger-bottom block w-6 h-0.5 bg-current"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="mobile-overlay" class="hidden fixed inset-0 bg-slate-900/40 z-40 lg:hidden"></div>
+  <div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 max-w-[85%] bg-brand-950 z-50 transform translate-x-full transition-transform duration-300 lg:hidden">
+    <div class="p-6 flex flex-col h-full">
+      <div class="flex items-center justify-between mb-10">
+        <div class="flex items-center gap-3">
+          <img src="assets/img/logo.svg" class="w-10 h-10" alt="ClimatPro">
+          <span class="font-display font-bold text-white text-lg">ClimatPro</span>
+        </div>
+        <button onclick="document.getElementById('menu-btn').click()" class="text-white p-2" aria-label="Cerrar menú">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <ul class="flex flex-col gap-1 text-white">
+        <li><a href="index.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Inicio</a></li>
+        <li><a href="nosotros.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Nosotros</a></li>
+        <li><a href="servicios.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Servicios</a></li>
+        <li><a href="precios.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Precios</a></li>
+        <li><a href="galeria.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Galería</a></li>
+        <li><a href="clases.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Clases</a></li>
+        <li><a href="contacto.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Contacto</a></li>
+      </ul>
+      <a href="contacto.html" class="mt-auto btn-gradient px-5 py-3 rounded-full text-white font-semibold text-center">Solicitar presupuesto</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative pt-40 pb-20 overflow-hidden bg-gradient-to-br from-brand-900 to-brand-700">
+    <div class="absolute inset-0 bg-radial-brand opacity-50"></div>
+    <div class="relative max-w-4xl mx-auto px-5 lg:px-8 text-white" data-aos="fade-up">
+      <span class="inline-block text-accent-400 text-xs font-bold uppercase tracking-widest mb-4">Academia ClimatPro</span>
+      <h1 class="font-display text-4xl md:text-6xl font-extrabold mb-6">Talleres y <span class="text-accent-400">capacitaciones</span> técnicas</h1>
+      <p class="text-cyan-100 text-lg max-w-2xl mb-8">Formación profesional en climatización dictada por nuestros técnicos senior. Cursos básicos, intermedios y avanzados con certificación.</p>
+      <div class="flex flex-wrap gap-8">
+        <div><div class="text-3xl font-display font-extrabold text-accent-400">+1.200</div><div class="text-sm text-cyan-100">Egresados</div></div>
+        <div><div class="text-3xl font-display font-extrabold text-accent-400">15</div><div class="text-sm text-cyan-100">Cursos disponibles</div></div>
+        <div><div class="text-3xl font-display font-extrabold text-accent-400">92%</div><div class="text-sm text-cyan-100">Tasa de empleabilidad</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTROS -->
+  <section class="py-12 bg-white border-b border-slate-200 sticky top-20 z-30">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+        <div id="day-tabs" class="flex flex-wrap gap-2" data-aos="fade-right">
+          <button data-day-target="all" class="bg-brand-700 text-white shadow-lg px-4 py-2 rounded-lg text-sm font-semibold transition">Toda la semana</button>
+          <button data-day-target="lun" class="bg-white text-slate-700 hover:bg-slate-100 px-4 py-2 rounded-lg text-sm font-semibold transition">Lunes</button>
+          <button data-day-target="mar" class="bg-white text-slate-700 hover:bg-slate-100 px-4 py-2 rounded-lg text-sm font-semibold transition">Martes</button>
+          <button data-day-target="mie" class="bg-white text-slate-700 hover:bg-slate-100 px-4 py-2 rounded-lg text-sm font-semibold transition">Miércoles</button>
+          <button data-day-target="jue" class="bg-white text-slate-700 hover:bg-slate-100 px-4 py-2 rounded-lg text-sm font-semibold transition">Jueves</button>
+          <button data-day-target="vie" class="bg-white text-slate-700 hover:bg-slate-100 px-4 py-2 rounded-lg text-sm font-semibold transition">Viernes</button>
+          <button data-day-target="sab" class="bg-white text-slate-700 hover:bg-slate-100 px-4 py-2 rounded-lg text-sm font-semibold transition">Sábado</button>
+        </div>
+        <div class="flex items-center gap-2" data-aos="fade-left">
+          <label for="level-filter" class="text-sm font-semibold text-slate-600">Nivel:</label>
+          <select id="level-filter" class="bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm font-medium focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none">
+            <option value="all">Todos</option>
+            <option value="basico">Básico</option>
+            <option value="intermedio">Intermedio</option>
+            <option value="avanzado">Avanzado</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HORARIO -->
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+      <!-- LUNES -->
+      <div class="mb-12" data-aos="fade-up">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white font-display font-extrabold text-lg">L</div>
+          <div>
+            <h2 class="font-display text-2xl font-bold text-brand-950">Lunes</h2>
+            <p class="text-sm text-slate-500">Mantenimiento y operación</p>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article data-day="lun" data-level="intermedio" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden card-hover">
+            <div class="h-2 bg-gradient-to-r from-brand-500 to-brand-700"></div>
+            <div class="p-6">
+              <div class="flex items-start justify-between mb-3">
+                <span class="inline-block bg-brand-100 text-brand-700 text-xs font-bold px-3 py-1 rounded-full">Intermedio · 16 h</span>
+                <span class="text-xs text-slate-500 font-mono">18:00 - 22:00</span>
+              </div>
+              <h3 class="font-display text-lg font-bold text-brand-900 mb-2">Mantenimiento preventivo</h3>
+              <p class="text-sm text-slate-600 mb-4">Limpieza profunda, controles eléctricos, carga de gas y diagnóstico profesional.</p>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-9 h-9 rounded-full bg-accent-100 text-accent-700 flex items-center justify-center font-bold text-xs">LM</div>
+                <div class="text-xs"><div class="font-semibold text-slate-700">Ing. Laura Méndez</div><div class="text-slate-500">Gerente Técnica</div></div>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                <div class="text-xs text-slate-500">8 cupos disponibles</div>
+                <div class="text-lg font-display font-extrabold text-brand-700">$42.000</div>
+              </div>
+            </div>
+          </article>
+          <article data-day="lun" data-level="avanzado" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden card-hover">
+            <div class="h-2 bg-gradient-to-r from-amber-400 to-red-500"></div>
+            <div class="p-6">
+              <div class="flex items-start justify-between mb-3">
+                <span class="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full">Avanzado · 40 h</span>
+                <span class="text-xs text-slate-500 font-mono">19:00 - 22:00</span>
+              </div>
+              <h3 class="font-display text-lg font-bold text-brand-900 mb-2">Certificación HVAC</h3>
+              <p class="text-sm text-slate-600 mb-4">Programa oficial con certificación oficial para desempeñarte como técnico matriculado.</p>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-9 h-9 rounded-full bg-accent-100 text-accent-700 flex items-center justify-center font-bold text-xs">MS</div>
+                <div class="text-xs"><div class="font-semibold text-slate-700">Ing. Martín Suárez</div><div class="text-slate-500">Director General</div></div>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                <div class="text-xs text-slate-500">3 cupos disponibles</div>
+                <div class="text-lg font-display font-extrabold text-brand-700">$95.000</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- MARTES -->
+      <div class="mb-12" data-aos="fade-up">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center text-white font-display font-extrabold text-lg">M</div>
+          <div>
+            <h2 class="font-display text-2xl font-bold text-brand-950">Martes</h2>
+            <p class="text-sm text-slate-500">Refrigeración comercial</p>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article data-day="mar" data-level="intermedio" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden card-hover">
+            <div class="h-2 bg-gradient-to-r from-accent-400 to-accent-600"></div>
+            <div class="p-6">
+              <div class="flex items-start justify-between mb-3">
+                <span class="inline-block bg-accent-100 text-accent-700 text-xs font-bold px-3 py-1 rounded-full">Intermedio · 24 h</span>
+                <span class="text-xs text-slate-500 font-mono">18:00 - 22:00</span>
+              </div>
+              <h3 class="font-display text-lg font-bold text-brand-900 mb-2">Refrigeración comercial</h3>
+              <p class="text-sm text-slate-600 mb-4">Cámaras frigoríficas, vitrinas, islas y exhibidoras. Mantenimiento y reparación.</p>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-9 h-9 rounded-full bg-accent-100 text-accent-700 flex items-center justify-center font-bold text-xs">DR</div>
+                <div class="text-xs"><div class="font-semibold text-slate-700">Diego Romero</div><div class="text-slate-500">Jefe de Obras</div></div>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                <div class="text-xs text-slate-500">5 cupos disponibles</div>
+                <div class="text-lg font-display font-extrabold text-brand-700">$58.000</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- MIÉRCOLES -->
+      <div class="mb-12" data-aos="fade-up">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-white font-display font-extrabold text-lg">M</div>
+          <div>
+            <h2 class="font-display text-2xl font-bold text-brand-950">Miércoles</h2>
+            <p class="text-sm text-slate-500">Eficiencia energética</p>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article data-day="mie" data-level="intermedio" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden card-hover">
+            <div class="h-2 bg-gradient-to-r from-emerald-400 to-emerald-600"></div>
+            <div class="p-6">
+              <div class="flex items-start justify-between mb-3">
+                <span class="inline-block bg-emerald-100 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full">Intermedio · 12 h</span>
+                <span class="text-xs text-slate-500 font-mono">18:00 - 22:00</span>
+              </div>
+              <h3 class="font-display text-lg font-bold text-brand-900 mb-2">Eficiencia energética</h3>
+              <p class="text-sm text-slate-600 mb-4">Análisis de consumo, etiquetado de eficiencia, propuestas de mejora y ahorros.</p>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-9 h-9 rounded-full bg-accent-100 text-accent-700 flex items-center justify-center font-bold text-xs">LM</div>
+                <div class="text-xs"><div class="font-semibold text-slate-700">Ing. Laura Méndez</div><div class="text-slate-500">Gerente Técnica</div></div>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                <div class="text-xs text-slate-500">10 cupos disponibles</div>
+                <div class="text-lg font-display font-extrabold text-brand-700">$32.000</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- JUEVES -->
+      <div class="mb-12" data-aos="fade-up">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center text-white font-display font-extrabold text-lg">J</div>
+          <div>
+            <h2 class="font-display text-2xl font-bold text-brand-950">Jueves</h2>
+            <p class="text-sm text-slate-500">Sistemas VRF/VRV</p>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article data-day="jue" data-level="avanzado" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden card-hover">
+            <div class="h-2 bg-gradient-to-r from-purple-500 to-purple-700"></div>
+            <div class="p-6">
+              <div class="flex items-start justify-between mb-3">
+                <span class="inline-block bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-full">Avanzado · 32 h</span>
+                <span class="text-xs text-slate-500 font-mono">18:00 - 22:00</span>
+              </div>
+              <h3 class="font-display text-lg font-bold text-brand-900 mb-2">Sistemas VRF/VRV</h3>
+              <p class="text-sm text-slate-600 mb-4">Diseño, instalación y programación de sistemas de caudal variable para edificios.</p>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-9 h-9 rounded-full bg-accent-100 text-accent-700 flex items-center justify-center font-bold text-xs">DR</div>
+                <div class="text-xs"><div class="font-semibold text-slate-700">Diego Romero</div><div class="text-slate-500">Jefe de Obras</div></div>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                <div class="text-xs text-slate-500">4 cupos disponibles</div>
+                <div class="text-lg font-display font-extrabold text-brand-700">$78.000</div>
+              </div>
+            </div>
+          </article>
+          <article data-day="jue" data-level="avanzado" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden card-hover">
+            <div class="h-2 bg-gradient-to-r from-cyan-400 to-accent-600"></div>
+            <div class="p-6">
+              <div class="flex items-start justify-between mb-3">
+                <span class="inline-block bg-cyan-100 text-accent-700 text-xs font-bold px-3 py-1 rounded-full">Avanzado · 24 h</span>
+                <span class="text-xs text-slate-500 font-mono">19:00 - 22:00</span>
+              </div>
+              <h3 class="font-display text-lg font-bold text-brand-900 mb-2">Automatización y smart climate</h3>
+              <p class="text-sm text-slate-600 mb-4">Integración con IoT, BMS, controles zonificados y apps móviles de gestión.</p>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-9 h-9 rounded-full bg-accent-100 text-accent-700 flex items-center justify-center font-bold text-xs">SP</div>
+                <div class="text-xs"><div class="font-semibold text-slate-700">Sofía Pérez</div><div class="text-slate-500">Atención al Cliente</div></div>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                <div class="text-xs text-slate-500">6 cupos disponibles</div>
+                <div class="text-lg font-display font-extrabold text-brand-700">$52.000</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- VIERNES -->
+      <div class="mb-12" data-aos="fade-up">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500 to-rose-700 flex items-center justify-center text-white font-display font-extrabold text-lg">V</div>
+          <div>
+            <h2 class="font-display text-2xl font-bold text-brand-950">Viernes</h2>
+            <p class="text-sm text-slate-500">Diagnóstico avanzado</p>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article data-day="vie" data-level="avanzado" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden card-hover">
+            <div class="h-2 bg-gradient-to-r from-rose-500 to-rose-700"></div>
+            <div class="p-6">
+              <div class="flex items-start justify-between mb-3">
+                <span class="inline-block bg-rose-100 text-rose-700 text-xs font-bold px-3 py-1 rounded-full">Avanzado · 28 h</span>
+                <span class="text-xs text-slate-500 font-mono">18:00 - 22:00</span>
+              </div>
+              <h3 class="font-display text-lg font-bold text-brand-900 mb-2">Diagnóstico y reparación</h3>
+              <p class="text-sm text-slate-600 mb-4">Uso de manifold, multímetro, pinza amperométrica y diagnóstico de fallas complejas.</p>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-9 h-9 rounded-full bg-accent-100 text-accent-700 flex items-center justify-center font-bold text-xs">MS</div>
+                <div class="text-xs"><div class="font-semibold text-slate-700">Ing. Martín Suárez</div><div class="text-slate-500">Director General</div></div>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                <div class="text-xs text-slate-500">7 cupos disponibles</div>
+                <div class="text-lg font-display font-extrabold text-brand-700">$68.000</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- SÁBADO -->
+      <div class="mb-12" data-aos="fade-up">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white font-display font-extrabold text-lg">S</div>
+          <div>
+            <h2 class="font-display text-2xl font-bold text-brand-950">Sábado</h2>
+            <p class="text-sm text-slate-500">Cursos intensivos de día completo</p>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article data-day="sab" data-level="basico" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden card-hover">
+            <div class="h-2 bg-gradient-to-r from-accent-400 to-brand-700"></div>
+            <div class="p-6">
+              <div class="flex items-start justify-between mb-3">
+                <span class="inline-block bg-accent-100 text-accent-700 text-xs font-bold px-3 py-1 rounded-full">Básico · 8 h</span>
+                <span class="text-xs text-slate-500 font-mono">09:00 - 18:00</span>
+              </div>
+              <h3 class="font-display text-lg font-bold text-brand-900 mb-2">Instalación split residencial</h3>
+              <p class="text-sm text-slate-600 mb-4">Curso intensivo de día completo. Aprendé a instalar splits paso a paso.</p>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-9 h-9 rounded-full bg-accent-100 text-accent-700 flex items-center justify-center font-bold text-xs">DR</div>
+                <div class="text-xs"><div class="font-semibold text-slate-700">Diego Romero</div><div class="text-slate-500">Jefe de Obras</div></div>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                <div class="text-xs text-slate-500">2 cupos disponibles</div>
+                <div class="text-lg font-display font-extrabold text-brand-700">$25.000</div>
+              </div>
+            </div>
+          </article>
+          <article data-day="sab" data-level="basico" class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden card-hover">
+            <div class="h-2 bg-gradient-to-r from-brand-500 to-brand-900"></div>
+            <div class="p-6">
+              <div class="flex items-start justify-between mb-3">
+                <span class="inline-block bg-brand-100 text-brand-700 text-xs font-bold px-3 py-1 rounded-full">Básico · 6 h</span>
+                <span class="text-xs text-slate-500 font-mono">10:00 - 17:00</span>
+              </div>
+              <h3 class="font-display text-lg font-bold text-brand-900 mb-2">Manejo de humedad y climatización</h3>
+              <p class="text-sm text-slate-600 mb-4">Conceptos fundamentales sobre humedad relativa, punto de rocío y bienestar.</p>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-9 h-9 rounded-full bg-accent-100 text-accent-700 flex items-center justify-center font-bold text-xs">LM</div>
+                <div class="text-xs"><div class="font-semibold text-slate-700">Ing. Laura Méndez</div><div class="text-slate-500">Gerente Técnica</div></div>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                <div class="text-xs text-slate-500">12 cupos disponibles</div>
+                <div class="text-lg font-display font-extrabold text-accent-600">GRATIS</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="text-accent-600 text-xs font-bold uppercase tracking-widest">¿Por qué estudiar con nosotros?</span>
+        <h2 class="font-display text-3xl md:text-4xl font-extrabold text-brand-950 mt-3 mb-4">Aprendé con los mejores</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-accent-100 text-accent-600 flex items-center justify-center mb-5">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          </div>
+          <h3 class="font-display text-lg font-bold text-brand-900 mb-2">Certificación oficial</h3>
+          <p class="text-slate-600 text-sm">Recibí un diploma con validez curricular al completar cada curso.</p>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center mb-5">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-display text-lg font-bold text-brand-900 mb-2">Práctica real</h3>
+          <p class="text-slate-600 text-sm">Trabajamos sobre equipos reales en nuestro taller con todos los materiales incluidos.</p>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mb-5">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <h3 class="font-display text-lg font-bold text-brand-900 mb-2">Bolsa de trabajo</h3>
+          <p class="text-slate-600 text-sm">Acceso directo a nuestra bolsa de empleo con 92% de inserción laboral.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gradient-to-br from-brand-900 to-brand-700 text-white text-center">
+    <div class="max-w-3xl mx-auto px-5 lg:px-8" data-aos="zoom-in">
+      <h2 class="font-display text-3xl md:text-4xl font-extrabold mb-5">¿Listo para capacitarte?</h2>
+      <p class="text-cyan-100 mb-8 text-lg">Inscripción online o por WhatsApp. Cupos limitados.</p>
+      <a href="contacto.html" class="btn-gradient px-8 py-4 rounded-full text-white font-semibold inline-flex items-center gap-2">
+        Inscribirme ahora
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-950 text-cyan-100">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <img src="assets/img/logo.svg" alt="" class="w-11 h-11">
+            <div>
+              <span class="block font-display font-extrabold text-xl text-white">ClimatPro</span>
+              <span class="block text-[11px] uppercase tracking-widest text-accent-400">HVAC Solutions</span>
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed">Confort y eficiencia todo el año.</p>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-white mb-5">Empresa</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="nosotros.html" class="hover:text-accent-400 transition">Nosotros</a></li>
+            <li><a href="servicios.html" class="hover:text-accent-400 transition">Servicios</a></li>
+            <li><a href="precios.html" class="hover:text-accent-400 transition">Precios</a></li>
+            <li><a href="galeria.html" class="hover:text-accent-400 transition">Galería</a></li>
+            <li><a href="clases.html" class="hover:text-accent-400 transition">Academia</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-white mb-5">Soporte</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="contacto.html" class="hover:text-accent-400 transition">Contacto</a></li>
+            <li><a href="privacidad.html" class="hover:text-accent-400 transition">Política de privacidad</a></li>
+            <li><a href="terminos.html" class="hover:text-accent-400 transition">Términos y condiciones</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-white mb-5">Contacto</h4>
+          <ul class="space-y-3 text-sm">
+            <li>+54 11 4567-8900</li>
+            <li>contacto@climatpro.com</li>
+            <li>Lun-Vie 9-19h · Urgencias 24/7</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-12 pt-8 text-xs text-cyan-200/70 text-center">
+        <p>&copy; <span id="current-year">2024</span> ClimatPro · Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/541145678900" target="_blank" rel="noopener" aria-label="WhatsApp" class="whatsapp-float fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-2xl transition">
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.480 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.85c1.564.916 3.367 1.405 5.183 1.408 5.46 0 9.92-4.42 9.92-9.881.001-2.652-1.032-5.144-2.906-7.014-1.875-1.874-4.366-2.906-7.015-2.906-5.46 0-9.92 4.42-9.918 9.88-.001 2.075.567 4.083 1.621 5.833l-1.069 3.903 3.974-1.228zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/navbar.js"></script>
+  <script src="assets/js/schedule.js"></script>
+</body>
+</html>

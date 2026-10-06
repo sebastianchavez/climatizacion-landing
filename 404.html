@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 · Página no encontrada · ClimatPro</title>
+  <meta name="description" content="La página que buscás no existe. Volvé al inicio de ClimatPro." />
+  <meta name="theme-color" content="#1e3a8a" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { brand: { 50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a',950:'#172554' }, accent: { 300:'#67e8f9',400:'#22d3ee',500:'#06b6d4',600:'#0891b2',700:'#0e7490' } },
+        fontFamily: { sans:['Inter','system-ui','sans-serif'], display:['Poppins','sans-serif'] }
+      } }
+    }
+  </script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col">
+
+  <!-- NAVBAR (versión simple, fondo blanco) -->
+  <nav class="w-full bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/img/logo.svg" alt="ClimatPro" class="w-11 h-11"/>
+          <div>
+            <span class="block font-display font-extrabold text-xl leading-none text-brand-900">ClimatPro</span>
+            <span class="block text-[11px] uppercase tracking-widest text-accent-600">HVAC Solutions</span>
+          </div>
+        </a>
+        <a href="index.html" class="text-sm text-slate-600 hover:text-brand-700 inline-flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          Volver al inicio
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO -->
+  <main class="flex-grow flex items-center justify-center px-5 py-16 bg-gradient-to-br from-brand-50 via-cyan-50 to-brand-100 relative overflow-hidden">
+    <div class="absolute -top-20 -left-20 w-72 h-72 bg-accent-400/20 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-brand-500/20 rounded-full blur-3xl"></div>
+
+    <div class="relative max-w-2xl mx-auto text-center" data-aos="zoom-in">
+      <div class="mb-8">
+        <span class="text-[10rem] md:text-[14rem] font-display font-extrabold text-gradient leading-none block">404</span>
+      </div>
+      <h1 class="font-display text-3xl md:text-4xl font-extrabold text-brand-950 mb-4">¡Ups! La página se enfrió</h1>
+      <p class="text-slate-600 text-lg mb-10 max-w-md mx-auto">Parece que la página que buscás no existe o fue movida. Pero no te preocupes, te ayudamos a encontrar el camino de vuelta al confort.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="index.html" class="btn-gradient px-7 py-4 rounded-full text-white font-semibold inline-flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          Ir al inicio
+        </a>
+        <a href="contacto.html" class="px-7 py-4 rounded-full border-2 border-brand-700 text-brand-700 hover:bg-brand-700 hover:text-white font-semibold inline-flex items-center gap-2 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          Contactanos
+        </a>
+      </div>
+
+      <div class="mt-16 pt-10 border-t border-slate-200/60">
+        <p class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-4">¿O quizás te interesa?</p>
+        <div class="flex flex-wrap justify-center gap-3 text-sm">
+          <a href="servicios.html" class="text-brand-700 hover:text-accent-600 font-semibold">Servicios</a>
+          <span class="text-slate-300">·</span>
+          <a href="precios.html" class="text-brand-700 hover:text-accent-600 font-semibold">Precios</a>
+          <span class="text-slate-300">·</span>
+          <a href="galeria.html" class="text-brand-700 hover:text-accent-600 font-semibold">Galería</a>
+          <span class="text-slate-300">·</span>
+          <a href="clases.html" class="text-brand-700 hover:text-accent-600 font-semibold">Academia</a>
+          <span class="text-slate-300">·</span>
+          <a href="nosotros.html" class="text-brand-700 hover:text-accent-600 font-semibold">Nosotros</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER SIMPLE -->
+  <footer class="bg-brand-950 text-cyan-100 py-8">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 text-center text-xs text-cyan-200/70">
+      <p>&copy; <span id="current-year">2024</span> ClimatPro · Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/541145678900" target="_blank" rel="noopener" aria-label="WhatsApp" class="whatsapp-float fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-2xl transition">
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.480 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.85c1.564.916 3.367 1.405 5.183 1.408 5.46 0 9.92-4.42 9.92-9.881.001-2.652-1.032-5.144-2.906-7.014-1.875-1.874-4.366-2.906-7.015-2.906-5.46 0-9.92 4.42-9.918 9.88-.001 2.075.567 4.083 1.621 5.833l-1.069 3.903 3.974-1.228zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

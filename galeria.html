@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galería · ClimatPro</title>
+  <meta name="description" content="Proyectos y trabajos realizados por ClimatPro: instalaciones residenciales, comerciales e industriales." />
+  <meta name="theme-color" content="#1e3a8a" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { brand: { 50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a',950:'#172554' }, accent: { 300:'#67e8f9',400:'#22d3ee',500:'#06b6d4',600:'#0891b2',700:'#0e7490' } },
+        fontFamily: { sans:['Inter','system-ui','sans-serif'], display:['Poppins','sans-serif'] }
+      } }
+    }
+  </script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .gallery-item { animation: fadeInScale 0.5s ease backwards; }
+    @keyframes fadeInScale { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img src="assets/img/logo.svg" alt="ClimatPro" class="w-11 h-11 group-hover:scale-105 transition-transform"/>
+          <div>
+            <span class="block font-display font-extrabold text-xl leading-none text-brand-900">ClimatPro</span>
+            <span class="block text-[11px] uppercase tracking-widest text-accent-600">HVAC Solutions</span>
+          </div>
+        </a>
+        <ul class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-700">
+          <li><a href="index.html" data-nav-link class="nav-link">Inicio</a></li>
+          <li><a href="nosotros.html" data-nav-link class="nav-link">Nosotros</a></li>
+          <li><a href="servicios.html" data-nav-link class="nav-link">Servicios</a></li>
+          <li><a href="precios.html" data-nav-link class="nav-link">Precios</a></li>
+          <li><a href="galeria.html" data-nav-link class="nav-link active">Galería</a></li>
+          <li><a href="clases.html" data-nav-link class="nav-link">Clases</a></li>
+          <li><a href="contacto.html" data-nav-link class="nav-link">Contacto</a></li>
+        </ul>
+        <div class="hidden lg:block">
+          <a href="contacto.html" class="btn-gradient px-5 py-2.5 rounded-full text-white text-sm font-semibold inline-flex items-center gap-2">
+            Solicitar presupuesto
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+        </div>
+        <button id="menu-btn" type="button" aria-expanded="false" aria-label="Abrir menú" class="lg:hidden flex flex-col gap-1.5 w-10 h-10 justify-center items-center text-brand-900">
+          <span class="hamburger-line hamburger-top block w-6 h-0.5 bg-current"></span>
+          <span class="hamburger-line hamburger-middle block w-6 h-0.5 bg-current"></span>
+          <span class="hamburger-line hamburger-bottom block w-6 h-0.5 bg-current"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="mobile-overlay" class="hidden fixed inset-0 bg-slate-900/40 z-40 lg:hidden"></div>
+  <div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 max-w-[85%] bg-brand-950 z-50 transform translate-x-full transition-transform duration-300 lg:hidden">
+    <div class="p-6 flex flex-col h-full">
+      <div class="flex items-center justify-between mb-10">
+        <div class="flex items-center gap-3">
+          <img src="assets/img/logo.svg" class="w-10 h-10" alt="ClimatPro">
+          <span class="font-display font-bold text-white text-lg">ClimatPro</span>
+        </div>
+        <button onclick="document.getElementById('menu-btn').click()" class="text-white p-2" aria-label="Cerrar menú">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <ul class="flex flex-col gap-1 text-white">
+        <li><a href="index.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Inicio</a></li>
+        <li><a href="nosotros.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Nosotros</a></li>
+        <li><a href="servicios.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Servicios</a></li>
+        <li><a href="precios.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Precios</a></li>
+        <li><a href="galeria.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Galería</a></li>
+        <li><a href="clases.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Clases</a></li>
+        <li><a href="contacto.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Contacto</a></li>
+      </ul>
+      <a href="contacto.html" class="mt-auto btn-gradient px-5 py-3 rounded-full text-white font-semibold text-center">Solicitar presupuesto</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative pt-40 pb-20 overflow-hidden bg-gradient-to-br from-brand-50 to-cyan-50">
+    <div class="absolute inset-0 bg-radial-brand opacity-70"></div>
+    <div class="relative max-w-4xl mx-auto px-5 lg:px-8 text-center" data-aos="fade-up">
+      <span class="inline-block text-accent-600 text-xs font-bold uppercase tracking-widest mb-4">Nuestros trabajos</span>
+      <h1 class="font-display text-4xl md:text-6xl font-extrabold text-brand-950 mb-6">Galería <span class="text-gradient">de proyectos</span></h1>
+      <p class="text-slate-600 text-lg max-w-2xl mx-auto">Una pequeña muestra de los proyectos que hemos realizado. Cada instalación es única y recibe la misma dedicación.</p>
+    </div>
+  </section>
+
+  <!-- FILTROS -->
+  <section class="py-12 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div id="gallery-filters" class="flex flex-wrap gap-3 justify-center mb-10" data-aos="fade-up">
+        <button data-filter="all" class="bg-brand-700 text-white shadow-md px-5 py-2 rounded-full text-sm font-semibold transition">Todos</button>
+        <button data-filter="residencial" class="bg-white text-slate-700 hover:bg-slate-100 px-5 py-2 rounded-full text-sm font-semibold transition">Residencial</button>
+        <button data-filter="comercial" class="bg-white text-slate-700 hover:bg-slate-100 px-5 py-2 rounded-full text-sm font-semibold transition">Comercial</button>
+        <button data-filter="industrial" class="bg-white text-slate-700 hover:bg-slate-100 px-5 py-2 rounded-full text-sm font-semibold transition">Industrial</button>
+        <button data-filter="instalacion" class="bg-white text-slate-700 hover:bg-slate-100 px-5 py-2 rounded-full text-sm font-semibold transition">Instalación</button>
+        <button data-filter="mantenimiento" class="bg-white text-slate-700 hover:bg-slate-100 px-5 py-2 rounded-full text-sm font-semibold transition">Mantenimiento</button>
+      </div>
+
+      <!-- GRID -->
+      <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div data-category="residencial" data-lightbox data-src="https://images.unsplash.com/photo-1761642119720-1ce47b16d09b?auto=format&fit=crop&w=1200&q=80" data-title="Instalación split living" data-subtitle="Residencial · CABA" class="gallery-item group cursor-pointer relative aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all">
+          <img src="https://images.unsplash.com/photo-1761642119720-1ce47b16d09b?auto=format&fit=crop&w=600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <div class="text-white"><p class="font-bold text-sm">Instalación split living</p><p class="text-xs text-accent-400">Residencial · CABA</p></div>
+          </div>
+        </div>
+        <div data-category="comercial" data-lightbox data-src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=1200&q=80" data-title="Mantenimiento oficina" data-subtitle="Comercial · Microcentro" class="gallery-item group cursor-pointer relative aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all">
+          <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <div class="text-white"><p class="font-bold text-sm">Mantenimiento oficina</p><p class="text-xs text-accent-400">Comercial · Microcentro</p></div>
+          </div>
+        </div>
+        <div data-category="industrial" data-lightbox data-src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80" data-title="Planta industrial" data-subtitle="Industrial · Pilar" class="gallery-item group cursor-pointer relative aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <div class="text-white"><p class="font-bold text-sm">Planta industrial</p><p class="text-xs text-accent-400">Industrial · Pilar</p></div>
+          </div>
+        </div>
+        <div data-category="instalacion" data-lightbox data-src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80" data-title="Instalación VRF" data-subtitle="Instalación · Belgrano" class="gallery-item group cursor-pointer relative aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all">
+          <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <div class="text-white"><p class="font-bold text-sm">Instalación VRF</p><p class="text-xs text-accent-400">Instalación · Belgrano</p></div>
+          </div>
+        </div>
+        <div data-category="residencial" data-lightbox data-src="https://images.unsplash.com/photo-1758798157512-f0a864c696c9?auto=format&fit=crop&w=1200&q=80" data-title="Dormitorio principal" data-subtitle="Residencial · Vicente López" class="gallery-item group cursor-pointer relative aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all">
+          <img src="https://images.unsplash.com/photo-1758798157512-f0a864c696c9?auto=format&fit=crop&w=600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <div class="text-white"><p class="font-bold text-sm">Dormitorio principal</p><p class="text-xs text-accent-400">Residencial · Vicente López</p></div>
+          </div>
+        </div>
+        <div data-category="mantenimiento" data-lightbox data-src="https://images.unsplash.com/photo-1633922273215-a902cbf4f4b9?auto=format&fit=crop&w=1200&q=80" data-title="Limpieza de filtros" data-subtitle="Mantenimiento · CABA" class="gallery-item group cursor-pointer relative aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all">
+          <img src="https://images.unsplash.com/photo-1633922273215-a902cbf4f4b9?auto=format&fit=crop&w=600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <div class="text-white"><p class="font-bold text-sm">Limpieza de filtros</p><p class="text-xs text-accent-400">Mantenimiento · CABA</p></div>
+          </div>
+        </div>
+        <div data-category="comercial" data-lightbox data-src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80" data-title="Restaurante" data-subtitle="Comercial · Palermo" class="gallery-item group cursor-pointer relative aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all">
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <div class="text-white"><p class="font-bold text-sm">Restaurante</p><p class="text-xs text-accent-400">Comercial · Palermo</p></div>
+          </div>
+        </div>
+        <div data-category="industrial" data-lightbox data-src="https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b?auto=format&fit=crop&w=1200&q=80" data-title="Centro de datos" data-subtitle="Industrial · Munro" class="gallery-item group cursor-pointer relative aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all">
+          <img src="https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b?auto=format&fit=crop&w=600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <div class="text-white"><p class="font-bold text-sm">Centro de datos</p><p class="text-xs text-accent-400">Industrial · Munro</p></div>
+          </div>
+        </div>
+        <div data-category="instalacion" data-lightbox data-src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80" data-title="Sistema central" data-subtitle="Instalación · San Isidro" class="gallery-item group cursor-pointer relative aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all">
+          <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <div class="text-white"><p class="font-bold text-sm">Sistema central</p><p class="text-xs text-accent-400">Instalación · San Isidro</p></div>
+          </div>
+        </div>
+        <div data-category="residencial" data-lightbox data-src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" data-title="Casa moderna" data-subtitle="Residencial · Tigre" class="gallery-item group cursor-pointer relative aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <div class="text-white"><p class="font-bold text-sm">Casa moderna</p><p class="text-xs text-accent-400">Residencial · Tigre</p></div>
+          </div>
+        </div>
+        <div data-category="comercial" data-lightbox data-src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80" data-title="Oficina corporativa" data-subtitle="Comercial · Puerto Madero" class="gallery-item group cursor-pointer relative aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <div class="text-white"><p class="font-bold text-sm">Oficina corporativa</p><p class="text-xs text-accent-400">Comercial · Puerto Madero</p></div>
+          </div>
+        </div>
+        <div data-category="instalacion" data-lightbox data-src="https://images.unsplash.com/photo-1757219525975-03b5984bc6e8?auto=format&fit=crop&w=1200&q=80" data-title="Equipo split premium" data-subtitle="Instalación · Recoleta" class="gallery-item group cursor-pointer relative aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all">
+          <img src="https://images.unsplash.com/photo-1757219525975-03b5984bc6e8?auto=format&fit=crop&w=600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <div class="text-white"><p class="font-bold text-sm">Equipo split premium</p><p class="text-xs text-accent-400">Instalación · Recoleta</p></div>
+          </div>
+        </div>
+        <div data-category="industrial" data-lightbox data-src="https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&w=1200&q=80" data-title="Sala técnica" data-subtitle="Industrial · Avellaneda" class="gallery-item group cursor-pointer relative aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all">
+          <img src="https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&w=600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <div class="text-white"><p class="font-bold text-sm">Sala técnica</p><p class="text-xs text-accent-400">Industrial · Avellaneda</p></div>
+          </div>
+        </div>
+        <div data-category="mantenimiento" data-lightbox data-src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=1200&q=80" data-title="Diagnóstico en curso" data-subtitle="Mantenimiento · CABA" class="gallery-item group cursor-pointer relative aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all">
+          <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <div class="text-white"><p class="font-bold text-sm">Diagnóstico en curso</p><p class="text-xs text-accent-400">Mantenimiento · CABA</p></div>
+          </div>
+        </div>
+        <div data-category="comercial" data-lightbox data-src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80" data-title="Café climatizado" data-subtitle="Comercial · San Telmo" class="gallery-item group cursor-pointer relative aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <div class="text-white"><p class="font-bold text-sm">Café climatizado</p><p class="text-xs text-accent-400">Comercial · San Telmo</p></div>
+          </div>
+        </div>
+        <div data-category="instalacion" data-lightbox data-src="https://images.unsplash.com/photo-1673784716250-160cf5cb3a19?auto=format&fit=crop&w=1200&q=80" data-title="Conductos ocultos" data-subtitle="Instalación · Núñez" class="gallery-item group cursor-pointer relative aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all">
+          <img src="https://images.unsplash.com/photo-1673784716250-160cf5cb3a19?auto=format&fit=crop&w=600&q=80" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <div class="text-white"><p class="font-bold text-sm">Conductos ocultos</p><p class="text-xs text-accent-400">Instalación · Núñez</p></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-center text-slate-500 text-sm mt-12" data-aos="fade-up">
+        Click en cualquier foto para ver en detalle. Usá las flechas o el teclado para navegar.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-950 text-cyan-100">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <img src="assets/img/logo.svg" alt="" class="w-11 h-11">
+            <div>
+              <span class="block font-display font-extrabold text-xl text-white">ClimatPro</span>
+              <span class="block text-[11px] uppercase tracking-widest text-accent-400">HVAC Solutions</span>
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed">Confort y eficiencia todo el año.</p>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-white mb-5">Empresa</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="nosotros.html" class="hover:text-accent-400 transition">Nosotros</a></li>
+            <li><a href="servicios.html" class="hover:text-accent-400 transition">Servicios</a></li>
+            <li><a href="precios.html" class="hover:text-accent-400 transition">Precios</a></li>
+            <li><a href="galeria.html" class="hover:text-accent-400 transition">Galería</a></li>
+            <li><a href="clases.html" class="hover:text-accent-400 transition">Academia</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-white mb-5">Soporte</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="contacto.html" class="hover:text-accent-400 transition">Contacto</a></li>
+            <li><a href="privacidad.html" class="hover:text-accent-400 transition">Política de privacidad</a></li>
+            <li><a href="terminos.html" class="hover:text-accent-400 transition">Términos y condiciones</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-white mb-5">Contacto</h4>
+          <ul class="space-y-3 text-sm">
+            <li>+54 11 4567-8900</li>
+            <li>contacto@climatpro.com</li>
+            <li>Lun-Vie 9-19h · Urgencias 24/7</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-12 pt-8 text-xs text-cyan-200/70 text-center">
+        <p>&copy; <span id="current-year">2024</span> ClimatPro · Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/541145678900" target="_blank" rel="noopener" aria-label="WhatsApp" class="whatsapp-float fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-2xl transition">
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.480 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.85c1.564.916 3.367 1.405 5.183 1.408 5.46 0 9.92-4.42 9.92-9.881.001-2.652-1.032-5.144-2.906-7.014-1.875-1.874-4.366-2.906-7.015-2.906-5.46 0-9.92 4.42-9.918 9.88-.001 2.075.567 4.083 1.621 5.833l-1.069 3.903 3.974-1.228zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/navbar.js"></script>
+  <script src="assets/js/gallery.js"></script>
+</body>
+</html>

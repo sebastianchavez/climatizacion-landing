@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de privacidad · ClimatPro</title>
+  <meta name="description" content="Política de privacidad de ClimatPro. Cómo recopilamos, usamos y protegemos tus datos personales." />
+  <meta name="theme-color" content="#1e3a8a" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { brand: { 50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a',950:'#172554' }, accent: { 300:'#67e8f9',400:'#22d3ee',500:'#06b6d4',600:'#0891b2',700:'#0e7490' } },
+        fontFamily: { sans:['Inter','system-ui','sans-serif'], display:['Poppins','sans-serif'] }
+      } }
+    }
+  </script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img src="assets/img/logo.svg" alt="ClimatPro" class="w-11 h-11 group-hover:scale-105 transition-transform"/>
+          <div>
+            <span class="block font-display font-extrabold text-xl leading-none text-brand-900">ClimatPro</span>
+            <span class="block text-[11px] uppercase tracking-widest text-accent-600">HVAC Solutions</span>
+          </div>
+        </a>
+        <ul class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-700">
+          <li><a href="index.html" data-nav-link class="nav-link">Inicio</a></li>
+          <li><a href="nosotros.html" data-nav-link class="nav-link">Nosotros</a></li>
+          <li><a href="servicios.html" data-nav-link class="nav-link">Servicios</a></li>
+          <li><a href="precios.html" data-nav-link class="nav-link">Precios</a></li>
+          <li><a href="galeria.html" data-nav-link class="nav-link">Galería</a></li>
+          <li><a href="clases.html" data-nav-link class="nav-link">Clases</a></li>
+          <li><a href="contacto.html" data-nav-link class="nav-link">Contacto</a></li>
+        </ul>
+        <div class="hidden lg:block">
+          <a href="contacto.html" class="btn-gradient px-5 py-2.5 rounded-full text-white text-sm font-semibold inline-flex items-center gap-2">
+            Solicitar presupuesto
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+        </div>
+        <button id="menu-btn" type="button" aria-expanded="false" aria-label="Abrir menú" class="lg:hidden flex flex-col gap-1.5 w-10 h-10 justify-center items-center text-brand-900">
+          <span class="hamburger-line hamburger-top block w-6 h-0.5 bg-current"></span>
+          <span class="hamburger-line hamburger-middle block w-6 h-0.5 bg-current"></span>
+          <span class="hamburger-line hamburger-bottom block w-6 h-0.5 bg-current"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="mobile-overlay" class="hidden fixed inset-0 bg-slate-900/40 z-40 lg:hidden"></div>
+  <div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 max-w-[85%] bg-brand-950 z-50 transform translate-x-full transition-transform duration-300 lg:hidden">
+    <div class="p-6 flex flex-col h-full">
+      <div class="flex items-center justify-between mb-10">
+        <div class="flex items-center gap-3">
+          <img src="assets/img/logo.svg" class="w-10 h-10" alt="ClimatPro">
+          <span class="font-display font-bold text-white text-lg">ClimatPro</span>
+        </div>
+        <button onclick="document.getElementById('menu-btn').click()" class="text-white p-2" aria-label="Cerrar menú">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <ul class="flex flex-col gap-1 text-white">
+        <li><a href="index.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Inicio</a></li>
+        <li><a href="nosotros.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Nosotros</a></li>
+        <li><a href="servicios.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Servicios</a></li>
+        <li><a href="precios.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Precios</a></li>
+        <li><a href="galeria.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Galería</a></li>
+        <li><a href="clases.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Clases</a></li>
+        <li><a href="contacto.html" class="block px-4 py-3 rounded-lg hover:bg-white/10 font-medium">Contacto</a></li>
+      </ul>
+      <a href="contacto.html" class="mt-auto btn-gradient px-5 py-3 rounded-full text-white font-semibold text-center">Solicitar presupuesto</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <section class="pt-40 pb-12 bg-gradient-to-br from-brand-50 to-cyan-50">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8" data-aos="fade-up">
+      <span class="inline-block text-accent-600 text-xs font-bold uppercase tracking-widest mb-4">Legal</span>
+      <h1 class="font-display text-4xl md:text-5xl font-extrabold text-brand-950 mb-4">Política de privacidad</h1>
+      <p class="text-slate-600 text-sm">Última actualización: enero de 2025</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-5 lg:px-8">
+      <div class="bg-white rounded-3xl shadow-md p-8 md:p-12" data-aos="fade-up">
+        <div class="prose-clima">
+
+          <p>En <strong>ClimatPro</strong> ("nosotros", "nuestro"), respetamos tu privacidad y nos comprometemos a proteger tus datos personales. Esta política describe cómo recopilamos, usamos y salvaguardamos tu información cuando visitás nuestro sitio web o utilizás nuestros servicios.</p>
+
+          <h2>1. Información que recopilamos</h2>
+          <h3>1.1. Datos proporcionados voluntariamente</h3>
+          <p>Cuando completás nuestro formulario de contacto, solicitás un presupuesto o te inscribís a un taller, podemos solicitarte:</p>
+          <ul>
+            <li>Nombre y apellido</li>
+            <li>Dirección de correo electrónico</li>
+            <li>Número de teléfono</li>
+            <li>Dirección física (para presupuestos)</li>
+            <li>Información sobre el servicio requerido</li>
+          </ul>
+
+          <h3>1.2. Datos recopilados automáticamente</h3>
+          <p>Al navegar en nuestro sitio, podemos recopilar información técnica como dirección IP, tipo de navegador, sistema operativo, páginas visitadas y tiempos de permanencia, mediante cookies y tecnologías similares.</p>
+
+          <h2>2. Finalidades del tratamiento</h2>
+          <p>Utilizamos tus datos personales para:</p>
+          <ul>
+            <li>Responder a tus consultas y enviar presupuestos solicitados</li>
+            <li>Prestar los servicios contratados y emitir facturación</li>
+            <li>Gestionar tu inscripción a talleres y capacitaciones</li>
+            <li>Enviar comunicaciones comerciales sobre nuestros servicios (solo si lo autorizaste)</li>
+            <li>Cumplir con obligaciones legales y fiscales</li>
+            <li>Mejorar nuestro sitio web y servicios</li>
+          </ul>
+
+          <h2>3. Base legal</h2>
+          <p>El tratamiento de tus datos se basa en:</p>
+          <ul>
+            <li><strong>Tu consentimiento</strong>, al completar formularios o aceptar recibir comunicaciones.</li>
+            <li><strong>La ejecución de un contrato</strong>, cuando nos solicitás un servicio.</li>
+            <li><strong>El cumplimiento de obligaciones legales</strong>, en materia fiscal y consumerista.</li>
+            <li><strong>Nuestro interés legítimo</strong>, para mejorar servicios y prevenir fraude.</li>
+          </ul>
+
+          <h2>4. Conservación de los datos</h2>
+          <p>Conservamos tus datos personales mientras mantenga vigencia la relación comercial y, posteriormente, durante el plazo legal aplicable (generalmente 10 años para documentación contable y tributaria).</p>
+
+          <h2>5. Cesión a terceros</h2>
+          <p>No vendemos ni alquilamos tus datos personales. Solo los compartimos con:</p>
+          <ul>
+            <li>Proveedores de servicios necesarios (hosting, email marketing, gestión contable), bajo acuerdos de confidencialidad.</li>
+            <li>Autoridades administrativas, judiciales o fiscales, cuando sea requerido por ley.</li>
+          </ul>
+
+          <h2>6. Cookies</h2>
+          <p>Nuestro sitio utiliza cookies propias y de terceros con fines analíticos y de personalización. Podés configurar tu navegador para rechazar todas las cookies o para recibir un aviso antes de su descarga. Tené en cuenta que algunas funcionalidades del sitio pueden verse afectadas.</p>
+
+          <h2>7. Derechos del titular (ARCO)</h2>
+          <p>De conformidad con la Ley 25.326 de Protección de Datos Personales, tenés derecho a:</p>
+          <ul>
+            <li><strong>Acceso</strong>: conocer qué datos tenemos sobre vos.</li>
+            <li><strong>Rectificación</strong>: corregir datos inexactos o incompletos.</li>
+            <li><strong>Cancelación</strong>: solicitar la eliminación de tus datos cuando consideres que no son necesarios.</li>
+            <li><strong>Oposición</strong>: oponerte al tratamiento de tus datos en determinadas circunstancias.</li>
+          </ul>
+          <p>Para ejercer estos derechos, contactanos a <strong>privacidad@climatpro.com</strong>. También podés presentar una denuncia ante la Agencia de Acceso a la Información Pública (AAIP).</p>
+
+          <h2>8. Seguridad de los datos</h2>
+          <p>Implementamos medidas técnicas y organizativas apropiadas para proteger tus datos contra acceso no autorizado, pérdida, alteración o destrucción. Entre ellas: encriptación SSL/TLS, acceso restringido por roles, copias de seguridad periódicas y formación continua a nuestro personal.</p>
+
+          <h2>9. Enlaces a sitios de terceros</h2>
+          <p>Nuestro sitio puede contener enlaces a sitios web de terceros. No somos responsables por las prácticas de privacidad de esos sitios. Te recomendamos leer sus políticas antes de proporcionarles información personal.</p>
+
+          <h2>10. Modificaciones</h2>
+          <p>Nos reservamos el derecho de modificar esta política para reflejar cambios legales o en nuestras prácticas. Publicaremos cualquier actualización en esta página, indicando la fecha de la última versión.</p>
+
+          <h2>11. Contacto</h2>
+          <p>Si tenés preguntas sobre esta política o querés ejercer tus derechos, podés escribirnos a:</p>
+          <ul>
+            <li><strong>Email:</strong> privacidad@climatpro.com</li>
+            <li><strong>Teléfono:</strong> +54 11 4567-8900</li>
+            <li><strong>Dirección:</strong> Av. Corrientes 1234, Piso 5, CABA (C1043), Argentina</li>
+          </ul>
+
+          <p class="text-xs text-slate-500 mt-8 pt-6 border-t border-slate-200">Documento generado en cumplimiento de la Ley 25.326 de Protección de Datos Personales (Argentina) y normativa complementaria. Esta política es un modelo de referencia para el template y debe ser revisada por un profesional legal antes de su uso comercial.</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="contacto.html" class="btn-gradient px-7 py-3 rounded-full text-white font-semibold inline-flex items-center gap-2">
+          ¿Tenés dudas? Contactanos
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-950 text-cyan-100">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <img src="assets/img/logo.svg" alt="" class="w-11 h-11">
+            <div>
+              <span class="block font-display font-extrabold text-xl text-white">ClimatPro</span>
+              <span class="block text-[11px] uppercase tracking-widest text-accent-400">HVAC Solutions</span>
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed">Confort y eficiencia todo el año.</p>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-white mb-5">Empresa</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="nosotros.html" class="hover:text-accent-400 transition">Nosotros</a></li>
+            <li><a href="servicios.html" class="hover:text-accent-400 transition">Servicios</a></li>
+            <li><a href="precios.html" class="hover:text-accent-400 transition">Precios</a></li>
+            <li><a href="galeria.html" class="hover:text-accent-400 transition">Galería</a></li>
+            <li><a href="clases.html" class="hover:text-accent-400 transition">Academia</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-white mb-5">Soporte</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="contacto.html" class="hover:text-accent-400 transition">Contacto</a></li>
+            <li><a href="privacidad.html" class="hover:text-accent-400 transition">Política de privacidad</a></li>
+            <li><a href="terminos.html" class="hover:text-accent-400 transition">Términos y condiciones</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-white mb-5">Contacto</h4>
+          <ul class="space-y-3 text-sm">
+            <li>+54 11 4567-8900</li>
+            <li>contacto@climatpro.com</li>
+            <li>Lun-Vie 9-19h · Urgencias 24/7</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-12 pt-8 text-xs text-cyan-200/70 text-center">
+        <p>&copy; <span id="current-year">2024</span> ClimatPro · Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/541145678900" target="_blank" rel="noopener" aria-label="WhatsApp" class="whatsapp-float fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-2xl transition">
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.480 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.85c1.564.916 3.367 1.405 5.183 1.408 5.46 0 9.92-4.42 9.92-9.881.001-2.652-1.032-5.144-2.906-7.014-1.875-1.874-4.366-2.906-7.015-2.906-5.46 0-9.92 4.42-9.918 9.88-.001 2.075.567 4.083 1.621 5.833l-1.069 3.903 3.974-1.228zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/navbar.js"></script>
+</body>
+</html>
