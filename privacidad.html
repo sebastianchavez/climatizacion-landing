@@ -35,7 +35,7 @@
             <span class="block text-[11px] uppercase tracking-widest text-accent-600">HVAC Solutions</span>
           </div>
         </a>
-        <ul class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-700">
+        <ul class="hidden xl:flex items-center gap-7 text-sm font-medium text-slate-700">
           <li><a href="index.html" data-nav-link class="nav-link">Inicio</a></li>
           <li><a href="nosotros.html" data-nav-link class="nav-link">Nosotros</a></li>
           <li><a href="servicios.html" data-nav-link class="nav-link">Servicios</a></li>
@@ -44,13 +44,13 @@
           <li><a href="clases.html" data-nav-link class="nav-link">Clases</a></li>
           <li><a href="contacto.html" data-nav-link class="nav-link">Contacto</a></li>
         </ul>
-        <div class="hidden lg:block">
+        <div class="hidden xl:block">
           <a href="contacto.html" class="btn-gradient px-5 py-2.5 rounded-full text-white text-sm font-semibold inline-flex items-center gap-2">
             Solicitar presupuesto
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
           </a>
         </div>
-        <button id="menu-btn" type="button" aria-expanded="false" aria-label="Abrir menú" class="lg:hidden flex flex-col gap-1.5 w-10 h-10 justify-center items-center text-brand-900">
+        <button id="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú" class="xl:hidden flex flex-col gap-1.5 w-10 h-10 justify-center items-center text-brand-900">
           <span class="hamburger-line hamburger-top block w-6 h-0.5 bg-current"></span>
           <span class="hamburger-line hamburger-middle block w-6 h-0.5 bg-current"></span>
           <span class="hamburger-line hamburger-bottom block w-6 h-0.5 bg-current"></span>
@@ -59,8 +59,8 @@
     </div>
   </nav>
 
-  <div id="mobile-overlay" class="hidden fixed inset-0 bg-slate-900/40 z-40 lg:hidden"></div>
-  <div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 max-w-[85%] bg-brand-950 z-50 transform translate-x-full transition-transform duration-300 lg:hidden">
+  <div id="mobile-overlay" class="hidden fixed inset-0 bg-slate-900/40 z-40 xl:hidden"></div>
+  <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú principal" aria-hidden="true" inert class="fixed top-0 right-0 h-full w-80 max-w-[85%] bg-brand-950 z-50 transform translate-x-full transition-transform duration-300 xl:hidden">
     <div class="p-6 flex flex-col h-full">
       <div class="flex items-center justify-between mb-10">
         <div class="flex items-center gap-3">

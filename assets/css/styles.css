@@ -14,11 +14,14 @@
 }
 
 html {
+  overflow-x: clip;
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
 }
 
 body {
+  /* Las animaciones laterales no deben ampliar el ancho de la página. */
+  overflow-x: clip;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -69,6 +72,61 @@ body {
   backdrop-filter: saturate(180%) blur(14px);
   -webkit-backdrop-filter: saturate(180%) blur(14px);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Contraste sobre el fondo claro del navbar al desplazarse. */
+#navbar.navbar-scrolled .navbar-brand,
+#navbar.navbar-scrolled #menu-btn {
+  color: var(--brand-900);
+}
+#navbar.navbar-scrolled .navbar-tagline {
+  color: var(--accent-600);
+}
+#navbar.navbar-scrolled .navbar-links {
+  color: #334155;
+}
+
+#menu-btn {
+  flex-shrink: 0;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* El panel y su fondo deben cubrir también el navbar y los botones flotantes. */
+#mobile-overlay {
+  z-index: 60;
+}
+#mobile-menu {
+  z-index: 70;
+  height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+#mobile-menu[aria-hidden="true"] {
+  visibility: hidden;
+}
+#mobile-menu > div {
+  height: auto;
+  min-height: 100%;
+  gap: 1rem;
+}
+#mobile-menu > div > div:first-child {
+  margin-bottom: 1rem;
+}
+#mobile-menu a:focus-visible,
+#mobile-menu button:focus-visible,
+#navbar a:focus-visible,
+#menu-btn:focus-visible {
+  outline: 2px solid var(--accent-400);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #mobile-menu,
+  .hamburger-line {
+    transition: none;
+  }
 }
 
 /* Animación del icono hamburguesa */
