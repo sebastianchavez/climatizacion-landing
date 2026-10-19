@@ -68,9 +68,9 @@ colors: {
 ```
 
 **Cambiar información de contacto** (buscar):
-- `+54 11 4567-8900` (teléfono)
-- `contacto@climatpro.com` (email)
-- `Av. Corrientes 1234, CABA` (dirección)
+- `+56 2 2896 5400` (teléfono)
+- `contacto@climatpro.cl` (email)
+- `Av. Apoquindo 4711, Las Condes, Santiago` (dirección)
 
 **Cambiar imágenes**: editá las URLs `https://images.unsplash.com/...` en cada archivo HTML. Buscá en [unsplash.com](https://unsplash.com) con keywords como `hvac`, `air-conditioner`, `technician`.
 
@@ -115,7 +115,7 @@ colors: {
 - El formulario **simula** el envío (no hay backend). Conectá a tu API editando `assets/js/contact.js`.
 - Las URLs de imágenes apuntan a Unsplash. Algunas pueden ser reemplazadas si dejás de funcionar.
 - Los textos legales (privacidad y términos) son **modelos de referencia**. Deben ser revisados por un profesional legal antes de uso comercial.
-- El mapa usa un iframe genérico de Google Maps apuntando a CABA.
+- El mapa usa un iframe genérico de Google Maps apuntando a Santiago de Chile.
 
 ## Compatibilidad
 
